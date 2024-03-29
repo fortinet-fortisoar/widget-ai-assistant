@@ -72,11 +72,11 @@ FortiAI bot provides a summary about the malware and its associated threat group
 
   ![Dialog Box](./res/alert_summary_edit_prompt.png)
 
-- Upon clicking 'Submit & Get AI's Response' the question prompt and module record data will be submitted to the LLM like OpenAI and user will get a response as shown below;
+- Upon clicking 'Submit & Get AI's Response' button the question prompt and module record data will be submitted to the LLM like OpenAI and user will get a response as shown below;
 
   ![Dialog Box](./res/summary_response.png)
 
-- In an another example, click on other question as shown below;
+- In an another example, click on other question like 'Generate Investigation Report' as shown below;
 
   ![Dialog Box](./res/investigation_report_edit_prompt.png)
 
