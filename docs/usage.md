@@ -41,13 +41,17 @@ Once you are satisfied with the JSON outline, click the **Ok, Generate Playbook*
 Once the process starts for generating the playbook steps, a loader guides how much of the process is completed.  
 ![Loader guiding the process of generating playbook](../docs/res/playbook_description_reviewresults.png)
 
-Once the process is complete, the playbook block is automatically pasted into the playbook designer, where it can be reviewed and used:  
+Once the process is complete, the playbook block is automatically pasted into the playbook designer, where it can be reviewed and used:
+
+
 ![AI generated playbook blocks](../docs/res/ai_generated_block.png)
 
 You can review the generated playbook block by opening specific steps and reviewing their details:   
 ![Reviewing an AI generated playbook block](../docs/res/ai_block_reviewstep.png)
 
-In the playbook designer, you can also ask for information about best practices, jinja etc., by selecting the **Response Plans / Jinja / Playbooks How Tos** option. FortiAI provides insightful responses, leveraging its extensive knowledge base to provide you with guidance, recommendations, or information related to security threats, Jinja, best practices, response plan creation, etc. For example, if you want help designing a response plan for a ransomware event, you can click the **FortiAI** icon, select the **Response Plans / Jinja / Playbooks How Tos** option, and type `Can you help me with a quick response plan for a ransomware investigation?` and then pressing **Enter**:  
+In the playbook designer, you can also ask for information about best practices, jinja etc., by selecting the **Response Plans / Jinja / Playbooks How Tos** option. FortiAI provides insightful responses, leveraging its extensive knowledge base to provide you with guidance, recommendations, or information related to security threats, Jinja, best practices, response plan creation, etc. For example, if you want help designing a response plan for a ransomware event, you can click the **FortiAI** icon, select the **Response Plans / Jinja / Playbooks How Tos** option, and type `Can you help me with a quick response plan for a ransomware investigation?` and then pressing **Enter**:
+
+
 ![Response Plan example](../docs/res/conv_mode.png) 
 
 FortiAI offers a set of procedures to follow when creating a response plan for a ransomware incident. You can use these steps to develop playbooks for handling such a scenario.
