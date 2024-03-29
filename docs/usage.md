@@ -23,7 +23,6 @@ For FortiAI to work, you must install and configure the following:
 
 - FortiAI solution pack
 
-
 ## Playbook Blocks Mode
 
 In Playbook Blocks mode, bot provides an innovative approach to streamline playbook creation and  management. Here's how it works:
@@ -67,9 +66,23 @@ FortiAI bot provides a summary about the malware and its associated threat group
 
   ![Module Question](./res/ai_bot_dialog.png)
 
-- Click on any of the questions, and a dialog box will appear to review the data that will be sent to the LLM.
+- Click on any of the questions, and a dialog box will appear to Review and Edit the data that will be sent to the LLM like OpenAI.
+  >**NOTE**: All sensitive and confidential information will be masked automatically by a bot. Please review it carefully and edit before submitting it to LLM.
+  
 
-  ![Dialog Box](./res/Alert Summary Edit Prompt.png)
+  ![Dialog Box](./res/alert_summary_edit_prompt.png)
+
+- Upon clicking 'Submit & Get AI's Response' the question prompt and module record data will be submitted to the LLM like OpenAI and user will get a response as shown below;
+
+  ![Dialog Box](./res/summary_response.png)
+
+- In an another example, click on other question as shown below;
+
+  ![Dialog Box](./res/investigation_report_edit_prompt.png)
+
+- And user will get a response as shown below;
+
+  ![Dialog Box](./res/report_response.png)
 
 
 For additional use cases and tips and techniques to help you craft better prompts for receiving the best possible responses from FortiAI, see the [FortiAI solution pack documentation](). 
