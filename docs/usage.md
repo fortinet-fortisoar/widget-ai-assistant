@@ -61,6 +61,17 @@ In Conversation Mode, FortiAI bot takes on a more interactive role, offering val
 
 FortiAI bot provides a summary about the malware and its associated threat groups.
 
+### Module Specific Question 
+
+- Open any of the alerts and click on the bot icon. A few pre-defined questions will appear.
+
+  ![Module Question](./res/ai_bot_dialog.png)
+
+- Click on any of the questions, and a dialog box will appear to review the data that will be sent to the LLM.
+
+  ![Dialog Box](./res/Alert Summary Edit Prompt.png)
+
+
 For additional use cases and tips and techniques to help you craft better prompts for receiving the best possible responses from FortiAI, see the [FortiAI solution pack documentation](). 
 
 | [Installation](./setup.md#installation) | [Configuration](./setup.md#configuration) |
