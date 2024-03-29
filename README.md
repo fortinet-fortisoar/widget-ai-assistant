@@ -1,7 +1,6 @@
 ## Release Information
 
-- **Version**: 2.0.0![Preview icon](./docs/res/icon-preview.svg)   
-  **NOTE**: Preview releases are a beta release. This means that release is intended to get feedback and might not be best suited for production level deployments. Feature availability and support for preview releases will continue to improve as the solution/feature matures.
+- **Version**: 2.0.0![Preview icon](./docs/res/icon-preview.svg)
 
 - **Certified**: Yes
 
@@ -12,8 +11,13 @@
 - **Applicable**: List View and Detail View of modules, and Playbook Designer
 
 - [Release Notes](./release_notes.md)
-  
-  >**NOTE**: The AI Assistant Widget must be used in conjunction with the 'Fortinet Advisor' solution pack to be of any use. For more information, see the [Fortinet Advisor solution pack documentation](https://github.com/fortinet-fortisoar/solution-pack-fortinet-advisor/blob/release/1.0.0/README.md).
+
+<table>
+    <th>NOTE</th>
+    <td>This is a preview version of 'FortiAI' designed to demonstrate the potential of Generative AI in FortiSOAR. Preview releases are a beta release. This means that release is intended to get feedback and might not be best suited for production level deployments. Feature availability and support for preview releases will continue to improve as the solution/feature matures.</td>
+</table>
+
+**NOTE**: The AI Assistant Widget must be used in conjunction with the 'FortiAI' solution pack to be of any use. For more information, see the [FortiAI solution pack documentation](https://github.com/fortinet-fortisoar/solution-pack-fortinet-advisor/blob/release/2.0.0/README.md).
 
 ## Overview
 
