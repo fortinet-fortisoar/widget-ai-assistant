@@ -25,4 +25,4 @@ The FortiSOAR AI Assistant Widget adds the 'FortiAI' bot to both the list view a
 >The AI Assistant Widget must be used in conjunction with the **FortiAI** solution pack. For more information, see the [FortiAI solution pack documentation](https://github.com/fortinet-fortisoar/solution-pack-fortinet-advisor).
 
 | [Installation](./docs/setup.md#installation) | [Configuration](./docs/setup.md#configuration) | [Usage](./docs/usage.md) | 
-|--------------------------------------------|----------------------------------------------|------------------------|
+|----------------------------------------------|------------------------------------------------|--------------------------|
