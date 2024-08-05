@@ -12,7 +12,7 @@
 4. Click **Install** on the lower part of the screen to begin installation.
 
 > [!NOTE]  
-> The **FortiAI Configuration** widget installs with the *FortiAI* solution pack and hence may not require separate installation.
+> The **FortiAI Configuration** widget installs with the [*FortiAI* solution pack](https://github.com/fortinet-fortisoar/solution-pack-fortinet-advisor/blob/develop/docs/setup.md#installation) and hence may not require separate installation.
 
 # Configuration
 

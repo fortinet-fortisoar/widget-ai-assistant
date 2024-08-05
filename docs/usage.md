@@ -59,11 +59,11 @@ You can review the generated playbook block by opening specific steps and review
 
 In the playbook designer, you can also ask for information about best practices, jinja, etc. The **FortiAI** bot provides insightful responses, leveraging its extensive knowledge base to provide you with guidance, recommendations, or information related to security threats, Jinja, best practices, response plan creation, etc. For example, if you want help designing a response plan for a ransomware event, you can click the **FortiAI** icon, type the following and then pressing **Enter**:
 
->*`Can you help me with a quick response plan for a ransomware investigation?`*
+>*`Can you help me create a playbook for a quick response plan for a ransomware investigation?`*
 
 ![Response Plan example](./res/conv_mode.png) 
 
-The **FortiAI** bot offers a playbook as a response plan for a ransomware incident.
+The **FortiSOAR AI Assistant** bot offers a playbook as a response plan for a ransomware incident.
 
 ## Conversational
 
@@ -86,17 +86,13 @@ The **FortiAI** bot provides a summary of the malware and its associated threat 
 >[!NOTE]
 >All sensitive and confidential information is masked automatically by the bot.
 
-  ![Dialog Box](./res/alert_summary_edit_prompt.png)
-
 - Upon pressing the Enter key, the question prompt and module record data is submitted to the LLM and the user gets a response as shown in the following image:
 
   ![Dialog Box](./res/summary_response.png)
 
-- In another example, click on other questions like 'Generate Investigation Report' as shown below;
+- In another example, click on other questions like 'Generate Investigation Report' after opening an alert record, to see that alert's summary.
 
-  ![Dialog Box](./res/investigation_report_edit_prompt.png)
-
-- And user will get a response as shown below;
+- And user gets a response as shown in the following image;
 
   ![Dialog Box](./res/report_response.png)
 
