@@ -17,16 +17,16 @@
 # Configuration
 
 > [!NOTE]  
-> The **AI Assistant** launches when module records such as alerts, incidents, or indicators are accessed and does not require an independent configuration.
+> The **AI Assistant** launches when module records such as alerts, incidents, or indicators &ndash; among various others &ndash; are accessed and does not require an independent configuration.
 
-## Permissions
+## Prerequisites
 
-To utilize the Fortinet Advisor solution pack, uses must have the following permissions, along with other appropriate permissions:
+- To utilize the Fortinet Advisor solution pack, user must have the following access, along with other appropriate permissions:
 
-- `Read` and `Usage` permissions on Widgets
-- `Read` and `Execute` permissions on Playbooks
+    - `Read` and `Usage` permissions on Widgets
+    - `Read` and `Execute` permissions on Playbooks
 
-For The **FortiAI** bot to work, you must install and configure the **FortiAI** solution pack
+- You must install and configure the **FortiAI** solution pack.
 
 # Next Steps
 | [Usage](./usage.md) |

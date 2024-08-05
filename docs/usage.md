@@ -3,7 +3,7 @@
 
 # Usage
 
-The AI Assistant Widget adds the **FortiAI** bot to both the list and detailed view of modules in FortiSOAR, as well as in the playbook designer. **FortiAI** is a valuable addition to your security toolkit, making playbook design more efficient and insightful. Whether you are new to security automation or a seasoned professional, **FortiAI** empowers you to create robust security playbooks that enhance your organization's cyber defenses. It also helps you in designing relevant response plans and offering contextual answers to your questions about different facets of security investigations and threat remediation, including learning about security processes to create comprehensive response plans, obtaining details on how to develop a specific kind of playbook, etc.
+The AI Assistant Widget adds the **FortiAI** bot to both the list and detailed view of modules in FortiSOAR, as well as in the playbook designer. **FortiAI** is a valuable addition to your security toolkit; apart from making playbook design more efficient and insightful, it can understand and process contextual conversations like creation of alerts, indicators, module navigation, etc.. Whether you are new to security automation or a seasoned professional, **FortiAI** empowers you to create robust security playbooks that enhance your organization's cyber defenses. It also helps you in designing relevant response plans and offering contextual answers to your questions about different facets of security investigations and threat remediation, including creating comprehensive response plans, obtaining details on how to develop a specific kind of playbook, etc.
 
 The **FortiAI** icon is visible in both the list view and detailed view of modules in FortiSOAR, as well as in the playbook designer. It is located on the lower-right corner, as shown in the following image of an alert detail view:
 
@@ -14,6 +14,9 @@ Click the icon to open the The **FortiAI** bot dialog to begin your interaction 
 ![FortiAI dialog](./res/ai_bot_dialog.png)
 
 To manually clear a conversation in the bot, click the **Clear Conversation** button.
+
+>[!Note]
+>Clearing a conversation deletes the thread and hence generative AIs, like OpenAI, may lose context.
 
 ## Playbooks Generation
 
@@ -54,13 +57,13 @@ You can review the generated playbook block by opening specific steps and review
 
 ![Reviewing an AI-generated playbook block](./res/ai_block_reviewstep.png)
 
-In the playbook designer, you can also ask for information about best practices, jinja, etc., by selecting the **Response Plans / Jinja / Playbooks How Tos** option. The **FortiAI** bot provides insightful responses, leveraging its extensive knowledge base to provide you with guidance, recommendations, or information related to security threats, Jinja, best practices, response plan creation, etc. For example, if you want help designing a response plan for a ransomware event, you can click the **FortiAI** icon, select the **Response Plans / Jinja / Playbooks How Tos** option, type the following and then pressing **Enter**:
+In the playbook designer, you can also ask for information about best practices, jinja, etc. The **FortiAI** bot provides insightful responses, leveraging its extensive knowledge base to provide you with guidance, recommendations, or information related to security threats, Jinja, best practices, response plan creation, etc. For example, if you want help designing a response plan for a ransomware event, you can click the **FortiAI** icon, type the following and then pressing **Enter**:
 
 >*`Can you help me with a quick response plan for a ransomware investigation?`*
 
 ![Response Plan example](./res/conv_mode.png) 
 
-The **FortiAI** bot offers a set of procedures to follow when creating a response plan for a ransomware incident. You can use these steps to develop playbooks for handling such a scenario.
+The **FortiAI** bot offers a playbook as a response plan for a ransomware incident.
 
 ## Conversational
 
@@ -72,7 +75,7 @@ The **FortiAI** bot takes on an interactive role, offering valuable assistance t
 
 The **FortiAI** bot provides a summary of the malware and its associated threat groups.
 
-## Module-Specific Question 
+## Module specific questions 
 
 - Open any of the alerts and click on the bot icon. A few pre-defined questions appears.
 
@@ -80,12 +83,12 @@ The **FortiAI** bot provides a summary of the malware and its associated threat 
 
 - Click on any of the questions, and a dialog box appears to Review and Edit the data that will be sent to the LLM like OpenAI.
 
-    >[!NOTE]
-    >All sensitive and confidential information is masked automatically by the bot. Please review it carefully and edit it before submitting it to LLM.
+>[!NOTE]
+>All sensitive and confidential information is masked automatically by the bot.
 
   ![Dialog Box](./res/alert_summary_edit_prompt.png)
 
-- Upon clicking the 'Submit & Get AI's Response' button the question prompt and module record data will be submitted to the LLM like OpenAI and the user will get a response as shown below;
+- Upon pressing the Enter key, the question prompt and module record data is submitted to the LLM and the user gets a response as shown in the following image:
 
   ![Dialog Box](./res/summary_response.png)
 
