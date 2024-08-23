@@ -1,6 +1,6 @@
 ## Release Information
 
-- **Version**: 3.0.0![Preview icon](./docs/res/icon-preview.svg)
+- **Version**: 3.0.1![Preview icon](./docs/res/icon-preview.svg)
 
 - **Certified**: Yes
 
