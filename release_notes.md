@@ -1,15 +1,16 @@
 # What's New
 
-- The AI Assistant can now understand and respond to context sensitive conversations and perform given SOC tasks.
+**Enhanced AI Assistant with Voice Recognition Feature**
 
-    - With bot's enhanced understanding of the natural language, it now derives its operating modes from the conversation; making the options &mdash; Playbook Blocks and Conversation Mode &mdash; redundant.
+A new **Voice Recognition** feature in our *AI Assistant* widget helps streamline SOC tasks with hands-free interaction. This enhancement brings greater flexibility, enabling users to interact through voice commands efficiently.
 
-    - The bot now has increased access to various modules, maintaining privacy is paramount. Sensitive data is still being actively masked for all interactions with the LLM.
+### Key Highlights
 
-    - The bot can now hold conversations to understand requirements and generate a more targeted playbook.
+- **Press and Hold**: Activate the voice input by pressing and holding the microphone icon.
+- **Automatic Stop**: Voice recording stops automatically when the microphone is released, simplifying the input process.
+- **Quick Send**: After recording, press **Enter** to send the response for processing.
 
-    - Through enhanced comprehension, the bot can also navigate to modules, its records, and playbook logs; in addition to alert investigation, remediation, escalation to incident, and even setting up war rooms, among several others.
+Try the Voice Recognition feature to elevate your SOC workflow!
 
-    - The bot now asks questions if it needs more information or context to perform a task. For example, in response to block an indicator, it asks for the indicator's value, type, and reason for blocking.
-
-- Previous conversations remain in the conversation window and help provide context to the bot, until users clear the conversation. The conversations persist throughout repeated logins and logouts.
+> [!Note]
+> The *Voice Recognition* feature is currently unsupported on the Firefox browser as the webkit `SpeechRecognition` is not compatible with Mozilla Firefox. Hence, the mic button is not available when the FortiSOAR&trade; environment is accessed using the Firefox browser.
