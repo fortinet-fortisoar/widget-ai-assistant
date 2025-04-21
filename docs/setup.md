@@ -26,7 +26,7 @@
     - `Read` and `Usage` permissions on Widgets
     - `Read` and `Execute` permissions on Playbooks
 
-- You must install and configure the **FortiAI** solution pack.
+- Install and configure the **FortiAI** solution pack.
 
 # Next Steps
 | [Usage](./usage.md) |

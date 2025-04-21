@@ -1,6 +1,6 @@
 ## Release Information
 
-- **Version**: 3.0.1![Preview icon](./docs/res/icon-preview.svg)
+- **Version**: 3.1.0![Preview icon](./docs/res/icon-preview.svg)
 
 - **Certified**: Yes
 
@@ -17,7 +17,13 @@
 
 ## Overview
 
-The FortiSOAR AI Assistant Widget adds the 'FortiAI' bot to both the list view and detail view of modules in FortiSOAR, as well as in the playbook designer. The 'FortiAI' bot is a powerful tool designed to provide contextual answers to your questions regarding security threats, response processes, work plans, Jinja expressions, and more! Additionally, it improves user experience and expedites the playbook creation and management process within the FortiSOAR platform. This multifunctional bot offers security professionals intelligent support and guidance in two distinct modes—Playbook Blocks and Conversation Mode.
+The FortiSOAR AI Assistant Widget adds the *FortiAI* bot to both the list view and detail view of modules in FortiSOAR, as well as in the playbook designer. The *FortiAI* bot is a powerful tool designed to provide contextual answers to your questions regarding security threats, response processes, work plans, Jinja expressions, and more! Additionally, it improves user experience and expedites the playbook creation and management process within the FortiSOAR platform.
+
+This multifunctional, context-aware bot now offers security professionals intelligent support and guidance through voice commands. For example, you can say:
+
+> *Filter out alerts currently under investigation*
+
+And you'd be shown something like the following:
 
 ![AI Assistant in FortiSOAR](./docs/res/ai_bot_dialog.png)
 

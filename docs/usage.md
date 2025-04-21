@@ -3,9 +3,11 @@
 
 # Usage
 
-The AI Assistant Widget adds the **FortiAI** bot to both the list and detailed view of modules in FortiSOAR, as well as in the playbook designer. **FortiAI** is a valuable addition to your security toolkit; apart from making playbook design more efficient and insightful, it can understand and process contextual conversations like creation of alerts, indicators, module navigation, etc.. Whether you are new to security automation or a seasoned professional, **FortiAI** empowers you to create robust security playbooks that enhance your organization's cyber defenses. It also helps you in designing relevant response plans and offering contextual answers to your questions about different facets of security investigations and threat remediation, including creating comprehensive response plans, obtaining details on how to develop a specific kind of playbook, etc.
+The AI Assistant Widget adds the **FortiAI** bot to both the list and detailed view of modules in FortiSOAR, as well as in the playbook designer. **FortiAI** is a valuable addition to your security toolkit; apart from making playbook design more efficient and insightful, it can understand and process contextual conversations like creation of alerts, indicators, module navigation, etc.. 
 
-The **FortiAI** icon is visible in both the list view and detailed view of modules in FortiSOAR, as well as in the playbook designer. It is located on the lower-right corner, as shown in the following image of an alert detail view:
+Whether you are new to security automation or a seasoned professional, **FortiAI** empowers you to create robust security playbooks that enhance your organization's cyber defenses. It also helps you in designing relevant response plans and offering contextual answers to your questions about different facets of security investigations and threat remediation, including creating comprehensive response plans, obtaining details on how to develop a specific kind of playbook, etc.
+
+The **FortiAI** icon becomes visible when a relevant module is selected. It appears on the lower-right corner, as shown in the following image of an alert's detail view:
 
 ![FortiAI bot icon in FortiSOAR](./res/ai_bot_icon.png)
 
@@ -16,7 +18,29 @@ Click the icon to open the The **FortiAI** bot dialog to begin your interaction 
 To manually clear a conversation in the bot, click the **Clear Conversation** button.
 
 >[!Note]
->Clearing a conversation deletes the thread and hence generative AIs, like OpenAI, may lose context.
+>Clearing a conversation starts a new thread while retaining the old thread in OpenAI. However, since a new thread is created, generative AIs, like OpenAI, may lose context.
+
+## Voice Recognition
+
+Use voice commands to generate playbooks or perform myriad of tasks. This section explains how to use the bot's voice recognition feature
+
+1. Click to launch a relevant module for the bot icon to appear. For example, *Alerts*, *Incidents*, and *indicators* are some modules on which the bot icon appears. The bot can also be launched on playbook designer interface to help draft playbooks.
+
+2. Click the <img src="./res/icon-bot.png" width="35px" alt="AI Bot"> icon to open the **FortiAI** bot.
+
+3. Click and hold the <img src="./res/icon-microphone.svg" width="15px" alt="microphone"> icon to speak your command. Release the mic when done. For example, you can say:
+
+    > *`Filter out alerts currently under investigation`*
+
+    The following example screen displays the widget in action.
+
+    ![AI Assistant in FortiSOAR](./res/ai_bot_dialog.png)
+
+>[!Tip]
+> Speak, instead of typing, any of the subsequent commands and see the magic unfold! 
+
+> [!Note]
+> The *Voice Recognition* feature is currently unsupported on the Firefox browser as the webkit `SpeechRecognition` is not compatible with Mozilla Firefox. Hence, the mic button is not available when the FortiSOAR&trade; environment is accessed using the Firefox browser.
 
 ## Playbooks Generation
 
@@ -39,7 +63,7 @@ Based on this prompt, the bot dynamically generates a JSON template of the playb
 The **FortiAI** bot generates a *proposed* playbook outline in the JSON format.
 
 >[!NOTE]
->*`It is advisable to review and update the JSON blocks as per your requirements`*.
+>It is advisable to review and update the JSON blocks as per your requirements.
 
 For example, if you want to enrich indicators using IPStack instead of VirusTotal, you can change 'Step 3: Enrich Indicators with VirusTotal' to 'Step 3: Enrich Indicators with IPStack'.
 
@@ -77,11 +101,11 @@ The **FortiAI** bot provides a summary of the malware and its associated threat 
 
 ## Module specific questions 
 
-- Open any of the alerts and click on the bot icon. A few pre-defined questions appears.
+- Open any of the alerts and click the bot icon. A few pre-defined questions appears.
 
   ![Module Question](./res/ai_bot_dialog.png)
 
-- Click on any of the questions, and a dialog box appears to Review and Edit the data that will be sent to the LLM like OpenAI.
+- Click any of the questions, and a dialog box appears to Review and Edit the data that will be sent to the LLM like OpenAI.
 
 >[!NOTE]
 >All sensitive and confidential information is masked automatically by the bot.
@@ -90,7 +114,7 @@ The **FortiAI** bot provides a summary of the malware and its associated threat 
 
   ![Dialog Box](./res/summary_response.png)
 
-- In another example, click on other questions like 'Generate Investigation Report' after opening an alert record, to see that alert's summary.
+- In another example, click other questions like *Generate Investigation Report* after opening an alert record, to see that alert's summary.
 
 - And user gets a response as shown in the following image;
 
