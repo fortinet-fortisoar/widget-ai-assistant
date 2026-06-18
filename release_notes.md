@@ -1,3 +1,3 @@
 # What's New
 
--   Minor bug fixes to fetch ai assistant data
+-  Updates to accommodate FortiAI solution pack changes 
