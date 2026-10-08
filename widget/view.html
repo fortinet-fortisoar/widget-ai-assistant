@@ -1,0 +1,273 @@
+<!-- Copyright (C) 2008 - 2026 Fortinet Inc.
+All rights reserved.
+FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE  -->
+<div data-ng-if="!aiFeatureEnabled">
+    <div class="col-md-12 margin-bottom-xlg padding-bottom-xlg margin-top-lg">
+        <div class="alert alert-info margin-bottom-0">
+            <div class="pull-left font-size-18 margin-top-sm width-30px">
+                <i class="fa fa-exclamation-circle"></i>
+            </div>
+            <div class="pull-left width-95 margin-top-8">
+                <p class="font-size-14 margin-bottom-0">{{ consentErrorMessage }}
+                </p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<div data-ng-if="aiFeatureEnabled" class="width-100pt {{currentTheme}}_chatbot chatBot-height" id="ai-assistant-bot">
+    <div class="display-inline-flex margin-0 width-100pt padding-sm align-items-center ai-header">
+        <img data-ng-src="{{botIcon}}" style="height: 38px; width : 32px;" alt="Bot">
+        <div class="ai-title-container">
+            <span class="aiTitle"> AI Assistant </span>
+        </div>
+        <div class="ai-header-actions">
+            <div class="font-size-12 padding-right-md right-divider">
+                <span> Token Usage </span> <span>: {{tokenByAssistant[activeAssistant].total_tokens || 0}} </span>
+                <i class="icon icon-information padding-left-sm" uib-tooltip-html="tokenInformation"
+                    tooltip-placement="bottom" tooltip-trigger="'mouseenter'">
+                </i>
+            </div>
+            <button ng-click="openDocumentation()" class="btn btn-sm btn-primary information-icon"
+                title="Click to view documentation">
+                <i class="fa fa-question"></i>
+            </button>
+        </div>
+    </div>
+    <div class="padding-left-0 padding-right-0 margin-bottom" id="bot-conversation-body">
+        <div name="fortiAdvisorBot-wizard" class="bot-conversation-body-inner-div">
+            <div id="chat-container-full">
+                <div id="bot-conversation-window" class="chat-container">
+                    <div>
+                        <!-- Unified Conversation Display using getActiveConversation() -->
+                        <div class="chat-box-display-grid"
+                            ng-repeat="message in getActiveConversation() track by $index">
+                            <div id="conversationThroughOutApplication-{{$index}}"
+                                style="display: flex; flex-direction: row-reverse;" class="margin-bottom-sm"
+                                ng-if="message.type === 'user'">
+                                <div class="chat-content user-message">
+                                    <div class="display-inline-block chatContentDiv">
+                                        <div data-cs-markdown-editor
+                                            class="markdown-editor-div padding-right-sm padding-md"
+                                            id="show-playbook-description" data-ng-model="message.text" mode="'view'"
+                                            data-override-word-limit-config="true">
+                                        </div>
+                                    </div>
+                                    <div class="padding-top-sm padding-bottom-sm display-flex chatActions">
+                                        <span class="text-center" data-ng-click="copyMessageContent(message.text)"
+                                            title="Copy">
+                                            <img data-ng-src="{{ copyIcon }}">
+                                        </span>
+                                        <span class="message-timestamp muted" data-ng-if="message.timestamp"
+                                            title="{{ message.timestamp | date:'medium' }}">
+                                            {{ message.timestamp | date:'hh:mm a' | lowercase }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- General Bot Message Rendering -->
+                            <div id="conversationThroughOutApplication-{{$index}}" class="display-flex margin-bottom-sm font-size-13"
+                                data-ng-if="(message.type === 'bot' || message.type === 'botGeneral')">
+                                <div class="chat-content bot-message">
+                                    <div style="max-width: 700px;" data-ng-if="!message.generatePlaybook && !message.processingConversation"
+                                        class="display-inline-block padding-lg chatContentDiv">
+                                        <div class="display-inline-flex error-color" data-ng-if="message.errorPresent">
+                                            <i class="fa fa-exclamation-triangle padding-top-3"></i>
+                                            <div data-cs-markdown-editor
+                                                class="markdown-editor-div padding-right-sm padding-left-sm"
+                                                data-ng-if="!message.isJSONFormat" id="show-playbook-description"
+                                                data-ng-model="message.text" mode="'view'"
+                                                data-override-word-limit-config="true">
+                                            </div>
+                                        </div>
+                                        <div data-ng-if="!message.errorPresent">
+                                            <div data-cs-markdown-editor class="markdown-editor-div padding-right-sm"
+                                                data-ng-if="!message.isJSONFormat" id="show-playbook-description"
+                                                data-ng-model="message.text" mode="'view'"
+                                                data-override-word-limit-config="true">
+                                            </div>
+                                            <div id="id-json-description" class="json-editor"
+                                                data-ng-if="message.isJSONFormat" data-cs-json-editor
+                                                data-expand-all="true" data-options="jsonOptions" data-field-obj="true"
+                                                data-expand-all="true" data-json="message.text">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- PB outline -->
+                                    <div style="max-width: 700px;" data-ng-if="message.generatePlaybook && message.isJSONFormat && !message.processingConversation"
+                                    class="display-inline-block padding-lg chatContentDiv">
+                                        <div id="help-user-text">
+                                            Here's a suggested playbook outline for review. You can edit this as
+                                            suitable and proceed to generate the playbook template.
+                                        </div>
+                                        <div id="id-text-bot-playbook-description" class="json-editor"
+                                            data-cs-json-editor data-expand-all="true" data-options="pbOptions"
+                                            data-field-obj="$index" data-on-change="updateJsonOutline"
+                                            data-json="message.text">
+                                        </div>
+                                        <div id="text-help-user" class="padding-top-sm">
+                                            Click on the "Ok, Generate Playbook" button below to paste a
+                                            playbook/block with
+                                            above instruction on the designer page.
+                                        </div>
+                                        <button type="button" data-ng-if="message.generatePlaybook"
+                                            data-ng-disabled="processingConversation || message.disabled"
+                                            class="btn btn-primary pull-left btn-sm margin-top-lg margin-right-lg"
+                                            data-ng-click="generatePlaybook(message); " id="btn-copy-result"
+                                            title="To paste the playbook block on playbook-designer page."><i
+                                                class="fa fa-clipboard margin-right-sm"></i>Ok, Generate Playbook
+                                        </button>
+                                    </div>
+                                    <!-- per-message processing loader -->
+                                    <div style="max-width: 700px; min-width: 250px;" data-ng-if="message.processingConversation"
+                                    class="display-inline-block padding-sm chatContentDiv">
+                                        <div class="display-flex align-items-center">
+                                            <img data-ng-src="{{botIcon}}" class="internalBot" alt="Bot">
+                                            <div class="chat-content">
+                                                <div style="max-width: 700px;" class="display-inline-block">
+                                                    <div class="padding-sm processing-message processing-text padding-left-sm" data-ng-if="processingMessage && processingMessage!==''">
+                                                            {{ processingMessage }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- chat action buttons -->
+                                    <div class="padding-top-sm padding-bottom-sm display-flex chatActions align-items-center">
+                                        <span class="text-center" data-ng-if="message.taskId"
+                                            data-ng-click="loadTraceFlow(message.taskId)" title="Trace Flow">
+                                            <i class="icon icon-traceability"></i>
+                                        </span>
+                                        <span class="text-center" data-ng-if="!message.processingConversation" data-ng-click="copyMessageContent(message.text)"
+                                            title="Copy">
+                                            <img data-ng-src="{{ copyIcon }}">
+                                        </span>
+                                        <span class="text-center" data-ng-if="!message.processingConversation && !message.generatePlaybook" data-ng-click="addAsComment(message.text)"
+                                            title="Comment">
+                                            <i class="fa fa-comments-o"></i>
+                                        </span>
+                                        <span class="message-timestamp muted" data-ng-if="message.timestamp"
+                                            title="{{ message.timestamp | date:'medium' }}">
+                                            {{ message.timestamp | date:'hh:mm a' | lowercase }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="user-input-container" class="margin-20" data-ng-class="{'disabled-chat': !aiFeatureEnabled }">
+        <div>
+            <div class="row margin-bottom-sm">
+                <div class="padding-right-0 padding-left-20 display-flex"
+                    data-ng-class="(inRecordDetailedView && staticQuestionsPresent) ? 'justify-content-space-between' : 'justify-content-end'">
+                    <div id="show-questions" data-ng-if="inRecordDetailedView && staticQuestionsPresent"
+                            data-ng-click="hideQuestionsPopUp(false)"
+                            data-ng-class="{'div-disabled': processingConversation}">
+                            <span class="font-size-12">Quick Prompts</span>
+                            <i class="fa fa-lightbulb-o margin-left-sm"></i>
+                    </div>
+                    <div class="display-flex align-items-baseline" style="justify-content: end; align-items: end;">
+                        <button id="copyConversation" class="conversationTextAction"
+                            data-ng-class="{'div-disabled': processingConversation || disableTextArea}"
+                            data-ng-click="copyConversation()" title="{{copyConversationToolTip}}"> Copy Conversation
+                        </button>
+                        <button id="clearConversation" class="conversationTextAction clearConversationMargin"
+                            data-ng-class="{'div-disabled': processingConversation || disableTextArea}"
+                            data-ng-click="clearConversation()" title="{{clearConversationTooltip}}"> Clear Conversation
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="record-static-questions" class="position-absolute module-questions z-index-1"
+                ng-show="inRecordDetailedView && staticQuestionsPresent && !loadingThreadConversation ">
+                <div class="padding-lg padding-top-md">
+                    <div class="display-flex-space-between">
+                        <div class="padding-sm font-size-14">
+                            Try Asking
+                        </div>
+                        <div data-ng-click="hideQuestionsPopUp(true)">
+                            <i class="icon icon-close icon-style" >
+                            </i>
+                        </div>
+                    </div>
+                    <div class="static-questions-main-div">
+                        <div class="static-questions-div">
+                            <div ng-repeat="(key, value) in listOfQuestions" class="padding-left-sm"
+                                style="cursor: pointer; margin-top: 0px; margin-bottom: 0px;"
+                                data-ng-click="processSelectedQuestion(key)">
+                                <div id="static-message-{{$index}}" ng-if="$even" class="margin-bottom-sm">
+                                    <div class="chat-content static-questions padding-5">
+                                        <div style="max-width: 700px; " class="display-inline-block margin-sm">
+                                            <div data-cs-markdown-editor class="markdown-editor-div padding-5"
+                                                id="module-static-message-alerts" data-ng-model="key" mode="'view'"
+                                                data-override-word-limit-config="true">
+                                            </div>
+                                        </div>
+                                        <div class="static-questions-description" title="{{value}}">
+                                            {{value}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="static-message-{{$index}}" ng-if="$odd" class="margin-bottom-sm">
+                                    <div class="chat-content static-questions padding-5">
+                                        <div style="max-width: 700px; " class="display-inline-block margin-sm">
+                                            <div data-cs-markdown-editor class="markdown-editor-div padding-5"
+                                                id="module-static-message-alerts" data-ng-model="key" mode="'view'"
+                                                data-override-word-limit-config="true">
+                                            </div>
+                                        </div>
+                                        <div class="static-questions-description" title="{{value}}">
+                                            {{value}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- conversation div -->
+            <div data-ng-class="{'div-disabled': processingConversation}">
+                <!-- inner conversation div -->
+                <div class="conversationArea border-radius-10" id="conversationArea"
+                    data-ng-click="textAreaActionsTriggered()"
+                    data-ng-class="{'disabled': processingConversation || disableTextArea || (disableConversationInDesigner && activeAssistant==='pb')}">
+                    <!-- prompt area -->
+                    <div>
+                        <textarea autofocus type="text" id="conversation-text-input" name="conversation-text-input"
+                            class="input-sm display-inline no-border border-radius-10 full-width"
+                            placeholder="{{processingConversation? 'AI response in progress. Please wait...' : 'Ask anything'}}" ng-model="userInput.textVal"
+                            ng-keypress="sendMessage($event, false)" ng-keyup="adjustTextareaHeight(true)"
+                            ng-keydown="adjustTextareaHeight(true)" data-ng-click="textAreaActionsTriggered()"
+                            ng-change="conversationTextUpdated()">
+                        </textarea>
+                    </div>
+                    <!-- conversation Actions Div-->
+                    <div class="display-flex padding-bottom-sm padding-right-sm" style="justify-content: flex-end;">
+                        <div id="agent-selection-dropdown" class="padding-left-lg" data-ng-if="allowAgentSelection"
+                            data-ng-class="{'div-disabled': processingConversation}"
+                            title="Select the agent model to use for this conversation">
+                            <select id="agent-selection-select" name="agentInUse" data-ng-model="agent.inUse"
+                                data-ng-disabled="processingConversation"
+                                data-ng-options="agent.name as agent.title for agent in AGENT_SELECTION"
+                                class="agent-selection-input font-08em">
+                                <option value="" disabled>Select Agent</option>
+                            </select>
+                        </div>
+                        <div class="padding-left-lg">
+                            <button data-ng-click="sendMessage($event, true)" type="button"
+                                class="btn btn-xs btn-primary">
+                                <i class="icon icon-enter"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- inner conversation div end-->
+            </div>
+        </div>
+    </div>
+</div>
