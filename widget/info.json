@@ -1,0 +1,45 @@
+{
+    "name": "aiAssistant",
+    "title": "AI Assistant",
+    "subTitle": "Using the power of Generative AI, the \u2018FortiAI\u2019 bot answers your questions contextually regarding security threats, response processes, work plans, Jinja expressions, and more. Its unique feature is its ability to generate playbook blocks tailored to scenarios defined by you, giving you a head start in automating and enhancing your use cases. Whether you are a seasoned playbook developer or just starting out, FortiAI bot is your go-to partner for streamlined and efficient playbook design.",
+    "version": "6.0.0",
+    "published_date": 1789476357,
+    "releaseNotes": "available",
+    "metadata": {
+        "description": "The FortiSOAR AI Assistant Widget integrates the 'Advisor' bot in list views, detail views, and playbook designer, facilitating contextual assistance on security threats, response processes, work plans, Jinja expressions, and more, enhancing user experience, expediting playbook creation and offering guidance in Playbook Blocks and Conversation Mode.",
+        "pages": [],
+        "certified": "Yes",
+        "publisher": "Fortinet",
+        "help_online": "https:\/\/github.com\/fortinet-fortisoar\/widget-ai-assistant\/blob\/release\/6.0.0\/README.md",
+        "compatibility": [
+            "8.0.1"
+        ],
+        "snapshots": [
+            "https:\/\/repo.fortisoar.fortinet.com\/fsr-widgets\/aiAssistant-6.0.0\/images\/ai_bot_dialog.png",
+            "https:\/\/repo.fortisoar.fortinet.com\/fsr-widgets\/aiAssistant-6.0.0\/images\/playbook_description_reviewresults.png"
+        ],
+        "logo": "data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM\/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAJjSURBVHgB7ZjhddowEMfPvA6QDapOUDaoN2g3iDtBswHpBDQTQCdoOgHOBJAJ5A2STHC5i6TEFmfpbIjJB37v6Rkhnf5n6XQSAJw5c1qK8AER5\/Tg0hRFUcMJIB9KehgqNfnQtBt+YJcFTAxrRj5ctRu3uI+BiSCtC0HfctvM97kQ7B7hAxAcvIm+v6EYmMxBr\/U7+vpvp8ZLSuWB4xFOBGlX3oeyr4OdMvYEfRNiL\/AJBuDf7Bu4dDQfYProyx24FFLDGPpm0E+9tNPHYnlMQWdvBpMOeoMNvh9W0Os4OEs4y0u4pVLC+2GobLyWiOigf6sNyPnx2BhIODnrM4BpnAuw1j8QNIt2xa9\/A\/llrancU9mBTtxQ+e6fKW6pzGmXfxFbfdDmgrqEkaDLBlkNyZAP64XCuYOXPezUhA6fJMtXLe+cJscZOBI0VqnQ2744ifmZY1Y9IlXKcXSzJfZBXX691sQdcxUNvmi1WRSWHt8uH4Eyav+Tl0XLacZAniaqt288JqoHKuimjcuoXXOdMzNlx3iG\/kf1WrCJv7uL6p8hT8NTfa2Y6k1siS62VphIO60+ldBmFbqrsIs1nYdcr5KgbmNaDJsLXUCvsRvU\/QaHOXeJadiHlajlHc291eifBGT7C\/OYtk0hDLKG\/R0X04A7N5+Etls6S3fRmCU9lpC\/ha\/J9meyB+pjso8qGmuptLOoDSHUHUVJB9H9W2EH2A3bhF7gAYdjcdjPBNaoYAyYv3kcisVjpC\/U3eOGwLPGB0T2+lbAANClGC5fwZ3B2vshH6cNuOOOd\/9uyr9Wzpw5hGem4c+nW\/r8PgAAAABJRU5ErkJggg==",
+        "contexts": [
+            "drawer"
+        ],
+        "view": {
+            "popup": "custom",
+            "draggable": true,
+            "activeBackground": true,
+            "enableFor": [
+                "main.section_dashboard",
+                "main.modules.list",
+                "viewPanel.modulesDetail",
+                "main.playbookDetail",
+                "main.marketplace.workspace"
+            ]
+        },
+        "standalone": true,
+        "windowClass": "Half Width",
+        "category": [
+            "Machine Learning"
+        ],
+        "associatedWidgets": ["aiAgentTraceability"]
+    },
+    "development": false
+}

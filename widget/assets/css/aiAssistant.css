@@ -1,0 +1,441 @@
+/* Copyright (C) 2008 - 2026 Fortinet Inc.
+All rights reserved.
+FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE */
+
+
+.dark_chatbot, .steel_chatbot {
+  --chat-text: #FFF;
+  --bot-msg-bg: #202a37;
+  --user-msg-bg: #283646;
+  --default-question-border: #1a2026;
+  --default-question-set-bg: #1a2026;
+  --clear-conversation-text: #20a6af;
+  --conversation-bg-color: none;
+  --divider : #23494c;
+  --conversation-area-border: #23494c;
+  --module-questions-container-bg: #263039;
+  --input-area-bg : #FFFFFF0A;
+  --processing-text-color1: #20a6af;
+  --processing-text-color2: #787C83;
+}
+
+.deepSea_chatbot{
+  --chat-text: #FFF;
+  --bot-msg-bg: #FFFFFF0A;
+  --user-msg-bg: #1E253D;
+  --default-question-border: #242E4A;
+  --default-question-set-bg: #1A2136;
+  --clear-conversation-text: #497ad4;
+  --conversation-bg-color: none;
+  --divider : rgba(36, 46, 74, 1);
+  --conversation-area-border: #242E4A;
+  --module-questions-container-bg: #242E4A;
+  --input-area-bg : #FFFFFF0A;
+  --processing-text-color1: #20a6af;
+  --processing-text-color2: #787C83;
+}
+
+.light_chatbot{
+  --chat-text: #000;
+  --user-msg-bg: #f7f7f7;
+  --bot-msg-bg: #ededed;
+  --conversation-bg-color: #FFF;
+  --default-question-border: rgba(212, 228, 252, 1);
+  --default-question-set-bg: #ededed;
+  --divider: rgba(212, 228, 252, 1);
+  --conversation-area-border: rgba(212, 228, 252, 1);
+  --module-questions-container-bg: #ffffff;
+  --input-area-bg : #c8bdbd1c;
+  --processing-text-color1: #3C6DB7;
+  --processing-text-color2: #96BBFF;
+}
+
+.information-icon{
+  margin-left: auto;
+  height: 30px;
+}
+
+.chatBot-height{
+  height: calc(100vh - 25px);
+}
+
+#bot-conversation-body{
+  background-color: var(--conversation-bg-color) 
+}
+
+#bot-conversation-body .markdown-editor-div .custom-markdown-editor {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  padding: 0;
+}
+
+#bot-conversation-body .markdown-editor-div .custom-markdown-editor p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.6;
+  padding: 0;
+}
+
+#bot-conversation-body .markdown-editor-div .custom-markdown-editor > :first-child {
+  margin-top: 0;
+}
+
+#bot-conversation-body .user-message {
+  grid-column: 2 / span 1;
+  float: right;
+  width: max-content;
+  border-radius: 10px 10px 0px 10px;
+  background: var(--user-msg-bg);
+  color: var(--chat-text);
+}
+
+#bot-conversation-body .user-message .custom-markdown-editor li{
+  color: var(--chat-text);
+}
+
+#bot-conversation-body .bot-message {
+  display: inline-grid;
+  width: fit-content;
+  max-width: calc(100% - 80px);
+  border-radius: 10px 10px 10px 0px;
+  background: var(--bot-msg-bg);
+  color: var(--chat-text);
+}
+
+#bot-conversation-body .chat-container .chat {
+  padding: 25px 10px;
+  display: flex;
+  justify-content: center;
+  color: var(--text-color);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 24px, #000 calc(100% - 24px), transparent 100%);
+}
+
+#bot-conversation-body .chat .chat-content {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#bot-conversation-body .bot-loader {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+  position: relative;
+  color: #20a6af;
+  box-sizing: border-box;
+  animation: animloader 1s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px;
+  }
+
+  25% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 -2px;
+  }
+
+  50% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 -2px, -14px 0 0 2px;
+  }
+
+  75% {
+    box-shadow: 14px 0 0 2px, 38px 0 0 -2px, -14px 0 0 -2px;
+  }
+
+  100% {
+    box-shadow: 14px 0 0 -2px, 38px 0 0 2px, -14px 0 0 -2px;
+  }
+}
+
+.chat-box-display-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin: 5px;
+}
+
+/* Focus the hovered div */
+.static-questions-div:hover .static-questions {
+    opacity: 0.45;
+    transform: scale(0.98);
+}
+
+.static-questions-div .static-questions:hover {
+    opacity: 1;
+    transform: scale(1.03);
+}
+
+.module-questions{
+  border: 1px solid var(--default-question-border);
+  height: 215px;
+  bottom: 88px;
+  border-radius: 10px;
+  background-color: var(--module-questions-container-bg);
+}
+
+.bot-error-style{
+  font-size: 12px;color: #ba0000;font-weight: 800;
+}
+
+.static-questions-main-div{
+  max-height: 180px; 
+  overflow-y: auto; 
+}
+
+.static-questions-main-div::-webkit-scrollbar-thumb{
+  background-color: #4747477a !important;
+}
+
+.static-questions{
+  width: 350px;
+  border-radius: 5px;
+  background-color: var(--default-question-set-bg);
+}
+
+.static-questions-description{
+  font-size: 10px;
+  padding-left: 5px;
+  margin-bottom: 5px;
+  color: gray;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  text-overflow: ellipsis;
+  max-height: 30px;
+}
+
+.bot-conversation-body-inner-div{
+  scroll-behavior: smooth;
+  min-height: 436px;
+}
+
+#ai-assistant-bot{
+  display: flex;
+  flex-direction: column;
+}
+
+#bot-conversation-body{
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  /* Fade content into the top and bottom edges so messages don't get
+     hard-clipped when scrolled. The mask uses alpha transparency so it
+     works on both light and dark themes without needing separate
+     background colors. */
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 32px,
+    #000 calc(100% - 32px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    #000 32px,
+    #000 calc(100% - 32px),
+    transparent 100%
+  );
+}
+
+#user-input-container{
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.div-disabled{
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.static-questions-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 10px;
+    transition: all 0.25s ease;
+}
+
+#user-input-container textarea {
+  resize: none;
+  min-height: 46px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#conversation-text-input{
+  background-color: transparent;
+}
+
+.conversationArea:has(textarea:focus) {
+  border-color: var(--conversation-area-border);
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px var(--conversation-area-border);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px var(--conversation-area-border);
+}
+
+.conversationArea {
+  background-color: var(--input-area-bg);
+  border: 1px solid var(--conversation-area-border);
+}
+
+.error-color{
+  color: #ba0000;
+}
+
+.disabled-chat{
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#agent-selection-dropdown{
+   margin-right: auto;
+}
+
+.agent-selection-input {
+    background: transparent;
+    color: inherit;
+    outline: none;
+    border: 1px solid #6c829f;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.aiTitle{
+  font-size: 22px;
+}
+
+.aiSubTitle{
+  font-size: 12px;
+}
+
+.ai-title-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-header{
+  border-bottom: 1px solid var(--divider);
+}
+
+.margin-20{
+  margin: 20px;
+}
+
+.conversationTextAction{
+  color:#86A6E2;
+  margin-top: -5px;
+  font-size: 11px; 
+  padding-right: 16px; 
+  color: var(--clear-conversation-text);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.clearConversationMargin{
+    border-left: 1px solid;
+    padding-left: 15px;
+}
+
+.chatContentDiv{
+  border-bottom: 1px solid var(--divider);
+}
+
+/* Style for spans inside chatActions — applied via the parent so that
+   the chat-action buttons don't need an explicit .chatActionSpan class. */
+.chatActions span{
+  width: 40px;
+  border-right: 1px solid var(--divider);
+}
+
+#ai-assistant-bot .ai-header-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#ai-assistant-bot .right-divider{
+  border-right: 1px solid var(--divider);
+}
+
+#ai-assistant-bot .message-timestamp{
+  margin-left: auto;
+  border-right: none;
+  width: auto;
+  padding: 5px;
+  font-size: 10px;
+}
+
+.user-message .chatContentDiv{
+  max-width: 700px;
+  min-width: 200px;
+}
+
+#ai-assistant-bot .json-editor{
+  height: 450px; 
+  width: 670px;
+}
+
+#ai-assistant-bot .icon-style{
+  font-size: 15px; 
+  height: 37px; 
+  width: 18px;
+}
+
+#ai-assistant-bot #show-playbook-description .richtext-view-content span {
+  font-family: inherit !important;
+}
+
+#ai-assistant-bot .processing-message{
+  color: #20a6af;
+}
+
+.padding-top-3{
+  padding-top: 3px;
+}
+
+.processing-text {
+    font-weight: 500;
+    color: var(--processing-text-color1);
+    background: linear-gradient(
+        110deg,
+        var(--processing-text-color1) 0%,
+        var(--processing-text-color1) 35%,
+        var(--processing-text-color2)  50%,
+        var(--processing-text-color1) 65%,
+        var(--processing-text-color1) 100%
+    );
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: processingGradient 4s linear infinite;
+}
+
+@keyframes processingGradient {
+    from {
+        background-position: 150% 0;
+    }
+
+    to {
+        background-position: -150% 0;
+    }
+}
+
+.internalBot{
+  height: 19px;
+  width: 23px;
+}
+
+.justify-content-space-between{
+  justify-content: space-between;
+}
